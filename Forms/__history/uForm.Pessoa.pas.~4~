@@ -1,0 +1,18 @@
+unit uForm.Pessoa;
+
+interface
+
+type
+
+  TPessoa = class
+  private
+  public
+    Nome: String;
+    Cpf : String;
+  end;
+
+implementation
+
+{ TPessoa }
+
+end.
