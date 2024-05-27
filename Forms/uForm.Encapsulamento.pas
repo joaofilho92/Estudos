@@ -44,6 +44,7 @@ begin
   try
     lConta.Nome := 'Joao'; // Entao, a primeira coisa que fizemos foi setar o nome 'Joao' para o atribuno Nome dessa nossa classe
     lConta.Deposito(50);   // Na Sequencia chamamos a procedure 'Deposito' e como Value foi passado o valor de 50, lembrandp que recebe valores do tipo Double.
+    lConta.Cadastro(0281872565230001);
 
     lConta2.Nome := 'Giulia'; //Aqui foi feito praticamente a mesma coisa!
     lConta2.Deposito(150);
@@ -59,6 +60,7 @@ begin
     Memo1.Lines.Add('-------------------------------');
 
     lConta2.Sacar(15);
+    Memo1.Lines.Add(lconta.Numero.ToString);
 
     //Fizemos da mesma maneira, para os demais, jogando, atribuindo novos valores, tanto nas procedures quanto nos atributos.
 
