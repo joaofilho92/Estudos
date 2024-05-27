@@ -1,0 +1,24 @@
+unit uForm.ContaBancaria;
+
+interface
+
+type
+  TContaBancaria = class
+    private
+    FNome: String;
+    function GetSaldo: Double;
+    public
+      property Nome : String read FNome write FNome;
+      property Saldo : Double read GetSaldo;
+  end;
+
+implementation
+
+{ TContaBancaria }
+
+function TContaBancaria.GetSaldo: Double;
+begin
+
+end;
+
+end.

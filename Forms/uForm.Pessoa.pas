@@ -12,6 +12,16 @@ type
     property CPF:String read FCPF write FCPF;
   end;
 
+
+  {
+  Get : LER
+  Set : GRAVA
+  }
+
+
+
+
+
 implementation
 
 { TPessoa }

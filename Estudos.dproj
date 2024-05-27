@@ -103,6 +103,11 @@
             <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="Forms\uForm.Pessoa.pas"/>
+        <DCCReference Include="Forms\uForm.Encapsulamento.pas">
+            <Form>Form2</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="Forms\uForm.ContaBancaria.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>

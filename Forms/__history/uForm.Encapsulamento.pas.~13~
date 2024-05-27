@@ -1,0 +1,83 @@
+unit uForm.Encapsulamento;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
+  System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls;
+
+type
+  TForm2 = class(TForm)
+    Button1: TButton;
+    Memo1: TMemo;
+    procedure Button1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form2: TForm2;
+
+implementation
+
+{$R *.dfm}
+
+uses uForm.ContaBancaria;
+
+//////////////////////////////////////////////////////////////
+//                                                          //
+//    EXEMPLO DE ENCAPSULAMENTO! DECORAR!!! URGENTE!!!      //
+//          SE FOR O CASO TENTE NOVAMENTE 1000X             //
+//                                                          //
+//////////////////////////////////////////////////////////////
+
+
+procedure TForm2.Button1Click(Sender: TObject);
+// Antes de tudo, Estamos trabalhando com encapsulamento!
+var
+  lConta, lConta2: TContaBancaria;  // Declaramos uma variavel que e do tipo da classe que vamos utilizar
+begin
+  lConta := TContaBancaria.Create; // Feito isso, precisamos estanciar essa nossa classe para que ela seja usada, na sequencia usamos um Try Finally e liberamos ela da memoria.
+  lConta2 := TContaBancaria.Create;
+  try
+    lConta.Nome := 'Joao'; // Entao, a primeira coisa que fizemos foi setar o nome 'Joao' para o atribuno Nome dessa nossa classe
+    lConta.Deposito(50);   // Na Sequencia chamamos a procedure 'Deposito' e como Value foi passado o valor de 50, lembrandp que recebe valores do tipo Double.
+
+    lConta2.Nome := 'Giulia'; //Aqui foi feito praticamente a mesma coisa!
+    lConta2.Deposito(150);
+
+    Memo1.Lines.Add(lConta.Nome);            //Agora o que fizemos foi passar ao MEMO as informacoes, usando como parametro o acesso a classe e seus atributos.
+    Memo1.Lines.Add(lConta.Saldo.ToString);
+
+    Memo1.Lines.Add('-------------------------------');
+
+    Memo1.Lines.Add(lConta2.Nome);
+    Memo1.Lines.Add(lConta2.Saldo.ToString);
+
+    Memo1.Lines.Add('-------------------------------');
+
+    lConta2.Sacar(15);
+
+    {
+    Fizemos da mesma maneira, para os demais, jogando, atribuindo novos valores, tanto nas procedures quanto nos atributos.
+    }
+
+    Memo1.Lines.Add(lConta2.Nome);
+    Memo1.Lines.Add(lConta2.Saldo.ToString);
+
+    Memo1.Lines.Add('-------------------------------');
+
+    lConta.Nome := 'Maricotinha';
+    Memo1.Lines.Add(lConta.Nome);
+
+  finally  // Aqui no Finally Liberamos as 2 estacias da memoria, para que o processador nao continua a utilizar a RAM para esse processo que ja se encerrou!
+    lConta.Free;
+    lConta2.Free;
+  end;
+
+end;
+
+end.

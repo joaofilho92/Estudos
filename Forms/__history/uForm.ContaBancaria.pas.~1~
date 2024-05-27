@@ -1,0 +1,15 @@
+unit uForm.ContaBancaria;
+
+interface
+
+type
+  TContaBancaria = class
+    private
+    public
+    Nome : String;
+    Saldo : Double;
+  end;
+
+implementation
+
+end.

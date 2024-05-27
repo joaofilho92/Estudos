@@ -1,0 +1,56 @@
+unit uForm.Encapsulamento;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls;
+
+type
+  TForm2 = class(TForm)
+    Button1: TButton;
+    Memo1: TMemo;
+    procedure Button1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form2: TForm2;
+
+implementation
+
+{$R *.dfm}
+
+uses uForm.ContaBancaria;
+
+procedure TForm2.Button1Click(Sender: TObject);
+var
+  lConta, lConta2: TContaBancaria;
+begin
+  lConta := TContaBancaria.Create;
+  lConta2 := TContaBancaria.Create;
+  try
+    lConta.Nome := 'Joao';
+    lConta.Deposito(50);
+
+    lConta2.Nome := 'Giulia';
+    lConta2.Deposito(500);
+
+    Memo1.Lines.Add(lConta.Nome);
+    Memo1.Lines.Add(lConta.Saldo.ToString);
+
+    Memo1.Lines.Add('-------------------------------');
+
+    Memo1.Lines.Add(lConta2.Nome);
+    Memo1.Lines.Add(lConta2.Saldo.ToString);
+  finally
+    lConta.Free;
+    lConta2.Free;
+  end;
+
+end;
+
+end.
