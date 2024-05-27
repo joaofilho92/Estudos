@@ -108,6 +108,11 @@
             <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="Forms\uForm.ContaBancaria.pas"/>
+        <DCCReference Include="Forms\uForm.Acoplamento.pas">
+            <Form>Form3</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="Forms\funcaoData.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>
