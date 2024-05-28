@@ -12,8 +12,8 @@ object Form1: TForm1
   Font.Style = []
   TextHeight = 15
   object Button1: TButton
-    Left = 160
-    Top = 128
+    Left = 8
+    Top = 24
     Width = 75
     Height = 25
     Caption = 'Button1'
@@ -21,12 +21,30 @@ object Form1: TForm1
     OnClick = Button1Click
   end
   object Button2: TButton
-    Left = 336
-    Top = 104
+    Left = 96
+    Top = 24
     Width = 75
     Height = 25
     Caption = 'Conta'
     TabOrder = 1
     OnClick = Button2Click
+  end
+  object Button3: TButton
+    Left = 200
+    Top = 160
+    Width = 75
+    Height = 25
+    Caption = 'Teste Idade'
+    TabOrder = 2
+    OnClick = Button3Click
+  end
+  object Button4: TButton
+    Left = 336
+    Top = 80
+    Width = 75
+    Height = 25
+    Caption = 'Button4'
+    TabOrder = 3
+    OnClick = Button4Click
   end
 end

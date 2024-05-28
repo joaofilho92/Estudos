@@ -7,7 +7,8 @@ uses
   uForm.Encapsulamento in 'Forms\uForm.Encapsulamento.pas' {Form2},
   uForm.ContaBancaria in 'Forms\uForm.ContaBancaria.pas',
   uForm.Acoplamento in 'Forms\uForm.Acoplamento.pas' {Form3},
-  funcaoData in 'Forms\funcaoData.pas';
+  funcaoData in 'Forms\funcaoData.pas',
+  uForm.Teste1 in 'Forms\uForm.Teste1.pas';
 
 {$R *.res}
 

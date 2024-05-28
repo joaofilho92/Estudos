@@ -10,8 +10,12 @@ type
   TForm1 = class(TForm)
     Button1: TButton;
     Button2: TButton;
+    Button3: TButton;
+    Button4: TButton;
     procedure Button1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
+    procedure Button3Click(Sender: TObject);
+    procedure Button4Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -25,7 +29,8 @@ implementation
 
 {$R *.dfm}
 
-uses uForm.Pessoa, uForm.ContaBancaria, uForm.Encapsulamento;
+uses uForm.Pessoa, uForm.ContaBancaria, uForm.Encapsulamento, funcaoData,
+  uForm.Teste1, Unit4;
 
 
 {
@@ -56,6 +61,24 @@ end;
 procedure TForm1.Button2Click(Sender: TObject);
 begin
     Form2.ShowModal;
+end;
+
+procedure TForm1.Button3Click(Sender: TObject);
+var
+ Niver : TPessoa;
+begin
+    Niver := TPessoa.Create;
+    try
+    //Niver.DataNascimento := '20/05/1992';
+    //ShowMessage(Niver.Idade.ToString);
+    finally
+     Niver.Free;
+    end;
+end;
+
+procedure TForm1.Button4Click(Sender: TObject);
+begin
+   Form4.Show;
 end;
 
 end.

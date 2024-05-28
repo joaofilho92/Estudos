@@ -113,6 +113,7 @@
             <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="Forms\funcaoData.pas"/>
+        <DCCReference Include="Forms\uForm.Teste1.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>
